@@ -2,6 +2,8 @@
 
 Log access of users managed by RainLab.User plugin. Provide one dashboard widget for logged data visualisation.
 
+Works well for example with [CodeLogin](http://octobercms.com/plugin/vojtasvoboda-codelogin) plugin for logging all user accesses to system and show its as graph.
+
 ## Dependencies
 
 Require RainLab.User plugin.
