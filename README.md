@@ -1,5 +1,9 @@
 # User access log
 
+[![Codacy](https://img.shields.io/codacy/1ff45e2f65dc4986aabfb63eef43822f.svg)](https://www.codacy.com/app/vojtasvoboda/oc-useraccesslog-plugin)
+[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/g/vojtasvoboda/oc-useraccesslog-plugin.svg)](https://scrutinizer-ci.com/g/vojtasvoboda/oc-useraccesslog-plugin/?branch=master)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/vojtasvoboda/oc-useraccesslog-plugin/blob/master/LICENSE.md)
+
 Log access of users managed by RainLab.User plugin. Provide one dashboard widget for logged data visualisation.
 
 Works well for example with [CodeLogin](http://octobercms.com/plugin/vojtasvoboda-codelogin) plugin for logging all user accesses to system and show its as graph.
@@ -21,10 +25,10 @@ Require RainLab.User plugin.
 
 **Feel free to send pullrequest!**
 
-## License
-
-Access log plugin is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT) same as OctoberCMS platform.
-
 ## Contributing
 
 Please send Pull Request to master branch.
+
+## License
+
+Access log plugin is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT) same as OctoberCMS platform.
