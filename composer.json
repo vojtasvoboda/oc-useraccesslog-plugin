@@ -1,0 +1,17 @@
+{
+    "name": "vojtasvoboda/oc-useraccesslog-plugin",
+    "type": "october-plugin",
+    "description": "User access log plugin for OctoberCMS",
+    "homepage": "https://github.com/vojtasvoboda/oc-useraccesslog-plugin",
+    "keywords": ["october", "plugin", "user", "access", "log"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vojta Svoboda",
+            "email": "vojtasvoboda.cz@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    }
+}
