@@ -26,6 +26,8 @@ class AccessLogStatistics extends ReportWidgetBase
 
         } catch (Exception $ex) {
             $this->vars['error'] = $ex->getMessage();
+            $this->vars['all'] = 0;
+            $this->vars['counts'] = [];
         }
 
         return $this->makePartial('widget');

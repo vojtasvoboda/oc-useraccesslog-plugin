@@ -2,3 +2,4 @@
     - First version of UserAccessLog
     - create_accesslog_table.php
 1.0.2: Fix dashboard widget label, add composer.json
+1.0.3: Fix getting empty log
