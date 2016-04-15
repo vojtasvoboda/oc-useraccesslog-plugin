@@ -12,6 +12,13 @@ return [
             'title_default' => 'Statistiky přístupů',
             'title_validation' => 'Nadpis widgetu je povinný',
         ],
+        'chartline' => [
+            'label' => 'Přístupy v čase jednotlivců',
+            'title' => 'Nadpis widgetu',
+            'title_default' => 'Statistiky přístupů jednotlivců',
+            'title_validation' => 'Nadpis widgetu je povinný',
+            'days_title' => 'Kolik dní zobrazit',
+        ],
         'chartlineaggregated' => [
             'label' => 'Přístupy v čase všech uživatelů',
             'title' => 'Nadpis widgetu',
