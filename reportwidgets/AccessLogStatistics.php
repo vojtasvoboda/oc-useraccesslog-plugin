@@ -42,11 +42,11 @@ class AccessLogStatistics extends ReportWidgetBase
     {
         return [
             'title' => [
-                'title' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.accesslogstatistics.title',
-                'default' => 'Access statistics',
+                'title' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.statistics.title',
+                'default' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.statistics.title_default',
                 'type' => 'string',
                 'validationPattern' => '^.+$',
-                'validationMessage' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.accesslogstatistics.title_validation'
+                'validationMessage' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.statistics.title_validation'
             ],
         ];
     }

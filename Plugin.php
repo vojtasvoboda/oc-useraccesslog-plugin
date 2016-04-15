@@ -45,8 +45,12 @@ class Plugin extends PluginBase
     {
         return [
             'VojtaSvoboda\UserAccessLog\ReportWidgets\AccessLogStatistics' => [
-                'label' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.accesslogstatistics.label',
+                'label' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.statistics.label',
                 'context' => 'dashboard'
+            ],
+            'VojtaSvoboda\UserAccessLog\ReportWidgets\AccessLogChartLineAggregated' => [
+                'label'   => 'vojtasvoboda.useraccesslog::lang.reportwidgets.chartlineaggregated.label',
+                'context' => 'dashboard',
             ],
         ];
     }
