@@ -11,7 +11,7 @@ use VojtaSvoboda\UserAccessLog\Models\AccessLog;
 use RainLab\User\Models\User;
 
 /**
- * Demands count overview widget.
+ * AccessLogChartLine overview widget.
  *
  * @package namespace VojtaSvoboda\UserAccessLog\ReportWidgets
  */
@@ -102,7 +102,7 @@ class AccessLogChartLine extends ReportWidgetBase
                     $row[1],
                 ];
             }
-            $user_rows[$key] = str_replace('"', '', substr(substr(json_encode($rows), 1), 0, -1));
+            $user_rows[$key] = $rows;
         }
 
         // count all
@@ -110,10 +110,9 @@ class AccessLogChartLine extends ReportWidgetBase
         foreach ($all as $a) {
             $all_render[] = [$a[0], $a[1]];
         }
-        $all = str_replace('"', '', substr(substr(json_encode($all_render), 1), 0, -1));
 
         return [
-            'all' => $all,
+            'all' => $all_render,
             'user_rows' => $user_rows,
             'users' => $users,
         ];

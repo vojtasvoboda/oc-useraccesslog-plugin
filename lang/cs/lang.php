@@ -26,5 +26,12 @@ return [
             'title_validation' => 'Nadpis widgetu je povinný',
             'days_title' => 'Kolik dní zobrazit',
         ],
+        'registrations' => [
+            'label' => 'Registrace uživatelů v čase',
+            'title' => 'Nadpis widgetu',
+            'title_default' => 'Nové registrace',
+            'title_validation' => 'Nadpis widgetu je povinný',
+            'days_title' => 'Kolik dní zobrazit',
+        ],
     ],
 ];

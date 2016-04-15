@@ -7,15 +7,14 @@ use ApplicationException;
 use Carbon\Carbon;
 use Exception;
 use Backend\Classes\ReportWidgetBase;
-use VojtaSvoboda\UserAccessLog\Models\AccessLog;
 use RainLab\User\Models\User;
 
 /**
- * AccessLogChartLineAggregated overview widget.
+ * Registrations overview widget.
  *
  * @package namespace VojtaSvoboda\UserAccessLog\ReportWidgets
  */
-class AccessLogChartLineAggregated extends ReportWidgetBase
+class Registrations extends ReportWidgetBase
 {
     /**
      * Renders the widget.
@@ -23,39 +22,34 @@ class AccessLogChartLineAggregated extends ReportWidgetBase
     public function render()
     {
         try {
-            $this->vars['all'] = $this->loadData();
-        }
-        catch (Exception $ex) {
+            $this->vars['registrations'] = $this->loadData();
+
+        } catch (Exception $ex) {
             $this->vars['error'] = $ex->getMessage();
-            $this->vars['all'] = '';
+            $this->vars['registrations'] = [];
         }
 
         return $this->makePartial('widget');
     }
 
-    /**
-     * Define widget properties
-     *
-     * @return array
-     */
-	public function defineProperties()
-	{
-		return [
-			'title' => [
-				'title' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.chartlineaggregated.title',
-				'default' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.chartlineaggregated.title_default',
-				'type' => 'string',
-				'validationPattern' => '^.+$',
-				'validationMessage' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.chartlineaggregated.title_validation',
-			],
+    public function defineProperties()
+    {
+        return [
+            'title' => [
+                'title' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.registrations.title',
+                'default' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.registrations.title_default',
+                'type' => 'string',
+                'validationPattern' => '^.+$',
+                'validationMessage' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.registrations.title_validation',
+            ],
             'days' => [
-                'title' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.chartlineaggregated.days_title',
+                'title' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.registrations.days_title',
                 'default' => '30',
                 'type' => 'string',
                 'validationPattern' => '^[0-9]+$',
             ]
-		];
-	}
+        ];
+    }
 
     protected function loadData()
     {
@@ -65,7 +59,7 @@ class AccessLogChartLineAggregated extends ReportWidgetBase
         }
 
         // all accesses for last month
-        $items = AccessLog::where('created_at', '>=', Carbon::now()->subDays($days)->format('Y-m-d'))->get();
+        $items = User::where('created_at', '>=', Carbon::now()->subDays($days)->format('Y-m-d'))->get();
 
         // parse data
         $all = [];
@@ -82,7 +76,7 @@ class AccessLogChartLineAggregated extends ReportWidgetBase
             }
         }
 
-        // count accessess for each day
+        // count all
         $all_render = [];
         foreach ($all as $a) {
             $all_render[] = [$a[0], $a[1]];

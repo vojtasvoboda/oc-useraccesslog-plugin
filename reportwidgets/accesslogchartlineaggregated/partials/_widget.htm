@@ -8,7 +8,7 @@
         data-chart-options="xaxis: {mode: 'time'}"
         class="height-200">
 
-        <span data-chart="dataset" data-set-data="<?= $all ?>"></span>
+        <span data-chart="dataset" data-set-data="<?= substr(json_encode($all), 1, -1) ?>"></span>
     </div>
 
     <?php else: ?>

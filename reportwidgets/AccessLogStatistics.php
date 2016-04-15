@@ -9,7 +9,7 @@ use Backend\Classes\ReportWidgetBase;
 use VojtaSvoboda\UserAccessLog\Models\AccessLog;
 
 /**
- * Demands count overview widget.
+ * AccessLogStatistics overview widget.
  *
  * @package \VojtaSvoboda\UserAccessLog\ReportWidgets
  */

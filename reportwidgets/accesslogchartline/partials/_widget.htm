@@ -11,7 +11,7 @@
         <?php foreach($rows as $key => $row) { ?>
             <span
                 data-chart="dataset"
-                data-set-data="<?= $row ?>"
+                data-set-data="<?= substr(json_encode($row), 1, -1) ?>"
                 data-set-name="<?= $users[$key]->username ?>"></span>
         <?php } ?>
 

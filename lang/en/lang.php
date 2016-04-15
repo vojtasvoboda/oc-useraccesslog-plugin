@@ -26,5 +26,12 @@ return [
             'title_validation' => 'Title is required',
             'days_title' => 'Number of days to display data for',
         ],
+        'registrations' => [
+            'label' => 'User registrations',
+            'title' => 'Widget title',
+            'title_default' => 'New registrations',
+            'title_validation' => 'Title is required',
+            'days_title' => 'Number of days to display data for',
+        ],
     ],
 ];
