@@ -3,3 +3,4 @@
     - create_accesslog_table.php
 1.0.2: Fix dashboard widget label, add composer.json
 1.0.3: Fix getting empty log
+1.0.4: Fix showing deleted users

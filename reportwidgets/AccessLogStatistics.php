@@ -64,7 +64,7 @@ class AccessLogStatistics extends ReportWidgetBase
         $all = 0;
         foreach ($log as $l) {
             $first = $l[0];
-            $user = $first->user;
+            $user = $first->user ? $first->user : $this->getDeletedFakeUser();
             $size = sizeof($l);
             $counts[] = [
                 'size' => $size,
@@ -78,6 +78,20 @@ class AccessLogStatistics extends ReportWidgetBase
             'all' => $all,
             'counts' => $counts
         ];
+    }
+
+    /**
+     * Get fake User object for deleted users
+     *
+     * @return \stdClass
+     */
+    public function getDeletedFakeUser()
+    {
+        $user = new \stdClass();
+        $user->username = 'Deleted users';
+        $user->name = 'Deleted';
+
+        return $user;
     }
 
 }
