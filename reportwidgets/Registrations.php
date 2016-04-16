@@ -37,7 +37,7 @@ class Registrations extends ReportWidgetBase
         return [
             'title' => [
                 'title' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.registrations.title',
-                'default' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.registrations.title_default',
+                'default' => 'New registrations',
                 'type' => 'string',
                 'validationPattern' => '^.+$',
                 'validationMessage' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.registrations.title_validation',

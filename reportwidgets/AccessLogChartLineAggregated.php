@@ -43,7 +43,7 @@ class AccessLogChartLineAggregated extends ReportWidgetBase
 		return [
 			'title' => [
 				'title' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.chartlineaggregated.title',
-				'default' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.chartlineaggregated.title_default',
+				'default' => 'Access statistics in time',
 				'type' => 'string',
 				'validationPattern' => '^.+$',
 				'validationMessage' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.chartlineaggregated.title_validation',
