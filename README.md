@@ -15,13 +15,13 @@ Require RainLab.User plugin.
 ## Installation
 
 1. Search VojtaSvoboda.UserAccessLog at System -> Updates -> Install plugins.
-2. Place dashboard widget by clicking on "Add widget" and select "Access log statistics".
+2. Place dashboard widget by clicking on dashboard button "Add widget".
 
 ## Future plans
 
-- posibility to select User column to display at widget (name, username, email, ...)
-- another graph for visualise access in time (line graph)
-- sent weekly/monthly reports to admin email
+- [x] another graph for visualise access in time (line graph)
+- [ ] posibility to select User column to display at pie chart widget (name, username, email, ...)
+- [ ] sent weekly/monthly reports to given email with nice graphs
 
 **Feel free to send pullrequest!**
 
