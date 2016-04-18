@@ -6,3 +6,4 @@
 1.0.4: Fix showing deleted users
 1.0.5: Add three new dashboard widgets
 1.0.6: Temporarily remove widget title translation
+1.0.7: Add de_DE locale (thanks to Sebastian Hilger)
