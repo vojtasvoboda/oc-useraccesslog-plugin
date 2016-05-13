@@ -1,10 +1,8 @@
-<?php
+<?php namespace VojtaSvoboda\UserAccessLog;
 
-namespace VojtaSvoboda\UserAccessLog;
-
+use System\Classes\PluginBase;
 use Event;
 use VojtaSvoboda\UserAccessLog\Models\AccessLog;
-use System\Classes\PluginBase;
 
 /**
  * UserAccessLog Plugin Information File
@@ -24,10 +22,11 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name' => 'vojtasvoboda.useraccesslog::lang.plugin.name',
+            'name'        => 'vojtasvoboda.useraccesslog::lang.plugin.name',
             'description' => 'vojtasvoboda.useraccesslog::lang.plugin.description',
-            'author' => 'Vojta Svoboda',
-            'icon' => 'icon-user',
+            'author'      => 'Vojta Svoboda',
+            'icon'        => 'icon-user',
+            'homepage'    => 'https://github.com/vojtasvoboda/oc-useraccesslog-plugin'
         ];
     }
 
@@ -36,7 +35,8 @@ class Plugin extends PluginBase
         /**
          * Log user after login
          */
-        Event::listen('rainlab.user.login', function ($user) {
+        Event::listen('rainlab.user.login', function($user)
+        {
             AccessLog::add($user);
         });
     }
@@ -45,8 +45,8 @@ class Plugin extends PluginBase
     {
         return [
             'VojtaSvoboda\UserAccessLog\ReportWidgets\AccessLogStatistics' => [
-                'label' => 'vojtasvoboda.useraccesslog::lang.reportwidgets.statistics.label',
-                'context' => 'dashboard'
+                'label'   => 'vojtasvoboda.useraccesslog::lang.reportwidgets.statistics.label',
+                'context' => 'dashboard',
             ],
             'VojtaSvoboda\UserAccessLog\ReportWidgets\AccessLogChartLine' => [
                 'label'   => 'vojtasvoboda.useraccesslog::lang.reportwidgets.chartline.label',
@@ -62,5 +62,4 @@ class Plugin extends PluginBase
             ],
         ];
     }
-
 }
