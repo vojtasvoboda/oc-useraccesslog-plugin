@@ -4,9 +4,9 @@
 [![Scrutinizer Coverage](https://img.shields.io/scrutinizer/g/vojtasvoboda/oc-useraccesslog-plugin.svg)](https://scrutinizer-ci.com/g/vojtasvoboda/oc-useraccesslog-plugin/?branch=master)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/vojtasvoboda/oc-useraccesslog-plugin/blob/master/LICENSE.md)
 
-Log access of users managed by RainLab.User plugin. Provide one dashboard widget for logged data visualisation.
+Log access of users managed by RainLab.User plugin. Provide one dashboard widget for logged data visualisation. Tested with the latest stable OctoberCMS build 349.
 
-Works well for example with [CodeLogin](http://octobercms.com/plugin/vojtasvoboda-codelogin) plugin for logging all user accesses to system and show its as graph.
+Works well for example with [CodeLogin](http://octobercms.com/plugin/vojtasvoboda-codelogin) plugin for logging all user accesses and show it as a graph.
 
 ## Dependencies
 
@@ -20,7 +20,7 @@ Require RainLab.User plugin.
 ## Future plans
 
 - [x] another graph for visualise access in time (line graph)
-- [ ] posibility to select User column to display at pie chart widget (name, username, email, ...)
+- [ ] posibility to select which User attribute we want to display at the pie chart widget (name, username, email, ...)
 - [ ] sent weekly/monthly reports to given email with nice graphs
 
 **Feel free to send pullrequest!**
