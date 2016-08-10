@@ -1,6 +1,9 @@
 {
     "name": "vojtasvoboda/oc-useraccesslog-plugin",
     "type": "october-plugin",
+    "extra": {
+        "installer-name": "useraccesslog"
+    },
     "description": "User access log plugin for OctoberCMS",
     "homepage": "https://github.com/vojtasvoboda/oc-useraccesslog-plugin",
     "keywords": ["october", "plugin", "user", "access", "log"],
