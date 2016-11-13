@@ -1,6 +1,4 @@
-<?php
-
-namespace VojtaSvoboda\UserAccessLog\ReportWidgets;
+<?php namespace VojtaSvoboda\UserAccessLog\ReportWidgets;
 
 use App;
 use ApplicationException;
@@ -62,27 +60,59 @@ class Registrations extends ReportWidgetBase
         $items = User::where('created_at', '>=', Carbon::now()->subDays($days)->format('Y-m-d'))->get();
 
         // parse data
+        $all = $this->sortItemsToDays($items);
+
+        // we need at least two days, to display chart
+        if (sizeof($all) == 1) {
+            $day = reset($all);
+            $date = Carbon::createFromFormat('Y-m-d', $day['date'])->subDays(1);
+            $dateFormated = $date->format('Y-m-d');
+            $all[$dateFormated] = [
+                'timestamp' => $date->timestamp * 1000,
+                'date' => $dateFormated,
+                'count' => 0,
+            ];
+        }
+
+        // count all
+        $all_render = [];
+        foreach ($all as $a) {
+            $all_render[] = [$a['timestamp'], $a['count']];
+        }
+
+        return $all_render;
+    }
+
+    /**
+     * Sort items by days.
+     *
+     * @param $items
+     *
+     * @return array
+     */
+    private function sortItemsToDays($items)
+    {
         $all = [];
+
         foreach ($items as $item)
         {
             // date
             $timestamp = strtotime($item->created_at) * 1000;
             $day = Carbon::createFromFormat('Y-m-d H:i:s', $item->created_at)->format('Y-m-d');
 
-            if (isset($all[$day])) {
-                $all[$day][1]++;
-            } else {
-                $all[$day] = [$timestamp, 1];
+            // init empty day
+            if (!isset($all[$day])) {
+                $all[$day] = [
+                    'timestamp' => $timestamp,
+                    'date' => $day,
+                    'count' => 0,
+                ];
             }
+
+            // increase count
+            $all[$day]['count']++;
         }
 
-        // count all
-        $all_render = [];
-        foreach ($all as $a) {
-            $all_render[] = [$a[0], $a[1]];
-        }
-
-        return $all_render;
+        return $all;
     }
-
 }

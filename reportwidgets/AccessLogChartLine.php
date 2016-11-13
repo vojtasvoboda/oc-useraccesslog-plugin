@@ -1,6 +1,4 @@
-<?php
-
-namespace VojtaSvoboda\UserAccessLog\ReportWidgets;
+<?php namespace VojtaSvoboda\UserAccessLog\ReportWidgets;
 
 use App;
 use ApplicationException;
@@ -86,15 +84,34 @@ class AccessLogChartLine extends ReportWidgetBase
                 $user_rows[$user_id][$day] = [$timestamp, 1];
             }
 
-            if (isset($all[$day])) {
-                $all[$day][1]++;
-            } else {
-                $all[$day] = [$timestamp, 1];
+            // init empty day
+            if (!isset($all[$day])) {
+                $all[$day] = [
+                    'timestamp' => $timestamp,
+                    'date' => $day,
+                    'count' => 0,
+                ];
             }
+
+            // increase count
+            $all[$day]['count']++;
+        }
+
+        // we need at least two days, to display chart
+        if (sizeof($all) == 1) {
+            $day = reset($all);
+            $date = Carbon::createFromFormat('Y-m-d', $day['date'])->subDays(1);
+            $dateFormated = $date->format('Y-m-d');
+            $all[$dateFormated] = [
+                'timestamp' => $date->timestamp * 1000,
+                'date' => $dateFormated,
+                'count' => 0,
+            ];
         }
 
         // transform user line to json
-        foreach ($user_rows as $key => $user_row) {
+        foreach ($user_rows as $key => $user_row)
+        {
             $rows = [];
             foreach($user_row as $row) {
                 $rows[] = [
@@ -102,13 +119,20 @@ class AccessLogChartLine extends ReportWidgetBase
                     $row[1],
                 ];
             }
+
+            // we need at least two days, to display chart
+            if (sizeof($rows) == 1) {
+                $first = reset($rows);
+                $rows[] = [$first[0] - 86400000, 0];
+            }
+
             $user_rows[$key] = $rows;
         }
 
         // count all
         $all_render = [];
         foreach ($all as $a) {
-            $all_render[] = [$a[0], $a[1]];
+            $all_render[] = [$a['timestamp'], $a['count']];
         }
 
         return [
@@ -131,5 +155,4 @@ class AccessLogChartLine extends ReportWidgetBase
 
         return $user;
     }
-
 }

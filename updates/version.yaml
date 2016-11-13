@@ -7,3 +7,4 @@
 1.0.5: Add three new dashboard widgets
 1.0.6: Temporarily remove widget title translation
 1.0.7: Add de_DE locale (thanks to Sebastian Hilger)
+1.0.8: Fix dashboard graphs when there is only one logged day
