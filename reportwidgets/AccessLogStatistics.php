@@ -1,6 +1,4 @@
-<?php
-
-namespace VojtaSvoboda\UserAccessLog\ReportWidgets;
+<?php namespace VojtaSvoboda\UserAccessLog\ReportWidgets;
 
 use App;
 use ApplicationException;
@@ -93,5 +91,4 @@ class AccessLogStatistics extends ReportWidgetBase
 
         return $user;
     }
-
 }
