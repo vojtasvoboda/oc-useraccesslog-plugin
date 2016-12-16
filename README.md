@@ -2,7 +2,7 @@
 
 [![Codacy](https://img.shields.io/codacy/1ff45e2f65dc4986aabfb63eef43822f.svg)](https://www.codacy.com/app/vojtasvoboda/oc-useraccesslog-plugin)
 [![Scrutinizer Coverage](https://img.shields.io/scrutinizer/g/vojtasvoboda/oc-useraccesslog-plugin.svg)](https://scrutinizer-ci.com/g/vojtasvoboda/oc-useraccesslog-plugin/?branch=master)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/vojtasvoboda/oc-useraccesslog-plugin/blob/master/LICENSE.md)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/vojtasvoboda/oc-useraccesslog-plugin/blob/master/LICENSE)
 
 Log access of users managed by RainLab.User plugin. Provide one dashboard widget for logged data visualisation. Tested with the latest stable OctoberCMS build 349.
 
