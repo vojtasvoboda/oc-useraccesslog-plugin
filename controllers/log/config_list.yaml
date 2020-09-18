@@ -12,7 +12,7 @@ modelClass: VojtaSvoboda\UserAccessLog\Models\AccessLog
 title: Manage Logs
 
 # Link URL for each record
-recordUrl: vojtasvoboda/useraccesslog/log/update/:id
+# recordUrl: vojtasvoboda/useraccesslog/log/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records
