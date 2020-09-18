@@ -34,4 +34,9 @@ return [
             'days_title' => 'Kolik dní zobrazit',
         ],
     ],
+    'settings' => [
+        'label' => 'Správa logu přístupů',
+        'description' => 'Nastavení logu přístupů',
+        'show_acces_log_listing' => 'Zobrazit access log v menu uživatelů',
+    ],
 ];

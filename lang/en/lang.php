@@ -34,4 +34,9 @@ return [
             'days_title' => 'Number of days to display data for',
         ],
     ],
+    'settings' => [
+        'label' => 'Config access log',
+        'description' => 'User access log settings',
+        'show_acces_log_listing' => 'Show access log listing',
+    ],
 ];

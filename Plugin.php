@@ -1,8 +1,11 @@
 <?php namespace VojtaSvoboda\UserAccessLog;
 
-use System\Classes\PluginBase;
+use Backend;
 use Event;
+use System\Classes\PluginBase;
+use System\Classes\SettingsManager;
 use VojtaSvoboda\UserAccessLog\Models\AccessLog;
+use VojtaSvoboda\UserAccessLog\Models\Settings;
 
 /**
  * UserAccessLog Plugin Information File
@@ -34,13 +37,22 @@ class Plugin extends PluginBase
 
     public function boot()
     {
-        /**
-         * Log user after login
-         */
-        Event::listen('rainlab.user.login', function($user)
-        {
+        // log user after login
+        Event::listen('rainlab.user.login', function ($user) {
             AccessLog::add($user);
         });
+
+        // extend users side-menu with User Access log
+        if (!empty(Settings::get('show_access_log_listing', false))) {
+            Event::listen('backend.menu.extendItems', function ($manager) {
+                $manager->addSideMenuItem('RainLab.User', 'user', 'access_log', [
+                    'label' => 'backend::lang.access_log.menu_label',
+                    'url' => Backend::url('vojtasvoboda/useraccesslog/log'),
+                    'icon' => 'icon-list',
+                    'order' => 300,
+                ]);
+            });
+        }
     }
 
     public function registerReportWidgets()
@@ -62,6 +74,21 @@ class Plugin extends PluginBase
                 'label'   => 'vojtasvoboda.useraccesslog::lang.reportwidgets.registrations.label',
                 'context' => 'dashboard',
             ],
+        ];
+    }
+
+    public function registerSettings()
+    {
+        return [
+            'config' => [
+                'label' => 'vojtasvoboda.useraccesslog::lang.settings.label',
+                'category' => SettingsManager::CATEGORY_USERS,
+                'icon' => 'icon-cog',
+                'description' => 'vojtasvoboda.useraccesslog::lang.settings.description',
+                'class' => Settings::class,
+                'permissions' => ['vojtasvoboda.useraccesslog.*'],
+                'order' => 600,
+            ]
         ];
     }
 }

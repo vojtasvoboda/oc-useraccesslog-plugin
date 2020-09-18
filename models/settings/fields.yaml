@@ -1,0 +1,5 @@
+tabs:
+    fields:
+        show_access_log_listing:
+            type: switch
+            label: vojtasvoboda.useraccesslog::lang.settings.show_acces_log_listing

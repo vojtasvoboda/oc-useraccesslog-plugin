@@ -1,0 +1,18 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        sortable: true
+    user:
+        label: User
+        sortable: true
+        relation: user
+        select: name
+    created_at:
+        label: Created at
+        type: datetime
+        sortable: true
+        format: d.m.Y H:i:s

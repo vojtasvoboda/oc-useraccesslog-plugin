@@ -1,0 +1,14 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+    user:
+        label: User
+        modelClass: RainLab\User\Models\User
+        conditions: user_id in (:filtered)
+        nameFrom: name
+    created_at:
+        label: Date
+        type: daterange
+        conditions: created_at >= ':after' AND created_at <= ':before'
