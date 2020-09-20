@@ -6,17 +6,17 @@ columns:
     id:
         label: ID
         sortable: true
-    user:
+    user_name:
         label: User
         sortable: true
         relation: user
         select: name
-    surname:
+    user_surname:
         label: Surname
         sortable: true
         relation: user
         select: surname
-    email:
+    user_email:
         label: E-mail
         sortable: true
         relation: user

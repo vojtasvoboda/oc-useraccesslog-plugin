@@ -9,3 +9,4 @@
 1.0.7: Add de_DE locale (thanks to Sebastian Hilger)
 1.0.8: Fix dashboard graphs when there is only one logged day
 1.1.0: Add access log listing
+1.1.1: Add es_ES translation and extend access log by surname and email columns
