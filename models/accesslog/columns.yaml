@@ -11,6 +11,16 @@ columns:
         sortable: true
         relation: user
         select: name
+    surname:
+        label: Surname
+        sortable: true
+        relation: user
+        select: surname
+    email:
+        label: E-mail
+        sortable: true
+        relation: user
+        select: email
     created_at:
         label: Created at
         type: datetime
